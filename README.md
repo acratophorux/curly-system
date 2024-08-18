@@ -2,15 +2,7 @@
 
 ## Project Description
 
-This project creates a comprehensive SQL database for a Library Management System. It explores various SQL concepts including database design, table creation, data insertion, basic and advanced querying.
-
-## Project Progress
-
-1. **Database Design**: Created the schema for Books, Authors, Borrowers, and Loans tables.
-2. **Creating Tables**: Wrote SQL statements to create the designed tables.
-3. **Inserting Sample Data**: Populated the tables with sample data.
-4. **Basic Queries**: Implemented queries to retrieve information from individual tables.
-5. **Advanced Queries**: Developed complex queries involving multiple tables for practical library management insights.
+This project implements a comprehensive SQL database for a Library Management System. It explores various SQL concepts including database design, table creation, data insertion, querying, data modification, views, and includes a simple Python application for database interaction.
 
 ## Project Structure
 
@@ -19,51 +11,68 @@ This project creates a comprehensive SQL database for a Library Management Syste
 - `sample_data.sql`: SQL file with insert statements for sample data.
 - `basic_queries.sql`: SQL file containing basic select queries.
 - `advanced_queries.sql`: SQL file containing complex queries for library management.
+- `modification_queries.sql`: SQL file with UPDATE, DELETE, and INSERT operations.
+- `views.sql`: SQL file creating views for commonly used query results.
+- `library_app.py`: Python script for a simple command-line interface to interact with the database.
 
 ## Database Schema
 
 Our library management system consists of the following tables:
 
-1. **Books**: Stores information about each book (ID, title, ISBN, publication year, genre, total copies, available copies).
-2. **Authors**: Contains details about authors (ID, first name, last name, birth year).
+1. **Books**: Stores information about each book.
+2. **Authors**: Contains details about authors.
 3. **Book_Authors**: A junction table representing the many-to-many relationship between books and authors.
-4. **Borrowers**: Stores information about library members (ID, first name, last name, email, phone, registration date).
-5. **Loans**: Tracks book loans (ID, book ID, borrower ID, loan date, due date, return date).
+4. **Borrowers**: Stores information about library members.
+5. **Loans**: Tracks book loans.
 
-## Queries Implemented
+## Features Implemented
 
-### Basic Queries
-
-- Retrieve all books
-- List all authors
-- Find books published after a certain year
-- Count total number of books
-- Find the oldest book
-- List borrowers registered in a specific year
-- Find currently borrowed books
-- Count books in each genre
-- Find authors born after a certain year
-- List all books with their authors
-
-### Advanced Queries
-
-- Find the most popular books
-- List overdue books with borrower information
-- Calculate average loan duration for each book
-- Find authors whose books have never been borrowed
-- List the top most active borrowers
+1. **Database Design and Creation**: Designed and implemented the database schema.
+2. **Sample Data Insertion**: Populated the database with sample data.
+3. **Basic Queries**: Implemented fundamental SELECT queries.
+4. **Advanced Queries**: Developed complex queries for practical library management insights.
+5. **Data Modification**: Implemented UPDATE, DELETE, and INSERT operations.
+6. **Views**: Created views for frequently used query results.
+7. **Python Application**: Developed a simple command-line interface for database interaction.
 
 ## Tools Used
 
 - Database: SQLite
-- Query Tool: SQLite command-line interface
+- Programming Language: Python
+- Libraries: sqlite3, tabulate
 
 ## Getting Started
 
-1. Ensure SQLite is installed on your system.
+1. Ensure SQLite and Python are installed on your system.
 2. Clone this repository.
 3. Navigate to the project directory.
-4. Run `sqlite3 library.db` to open the database.
-5. Use `.read library_schema.sql` to create the tables.
-6. Use `.read sample_data.sql` to insert sample data.
-7. Run queries from `basic_queries.sql` and `advanced_queries.sql` as needed.
+4. Install required Python package: `pip install tabulate`
+5. Set up the database:
+   ```
+   sqlite3 library.db < library_schema.sql
+   sqlite3 library.db < sample_data.sql
+   sqlite3 library.db < views.sql
+   ```
+6. Run the application: `python library_app.py`
+
+## Using the Application
+
+The Python application provides a simple interface to:
+
+1. View available books
+2. Check overdue loans
+3. See popular books
+4. Add new books to the system
+
+Follow the on-screen prompts to navigate through these options.
+
+## Learning Outcomes
+
+Through this project, we've gained practical experience in:
+
+- Designing a relational database schema
+- Writing and executing various types of SQL queries
+- Creating and using views in SQL
+- Implementing data modification operations
+- Developing a simple application interface to interact with a database
+- Version controlling a database project
